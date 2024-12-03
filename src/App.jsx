@@ -15,17 +15,17 @@ function App() {
     <>
       <div className={`${isSignUpOrLogin ? "" : styles.crmApp}`}>
         <div className={styles.logo}>
-        <Logo/>
+          <Logo />
         </div>
         {/* if login or register page is actiive, add this class ${styles.loginPageActive} */}
         <div className={`${styles.register} ${isSignUpOrLogin ? styles.loginPageActive : styles.otherPages}`}>
-          <Router>
+          <Router basename='/hospitalrepo'>
             <Routes>
               <Route path="/" element={<Login setIsSignUpOrLogin={setIsSignUpOrLogin} />} />
               <Route path="/password-reset" element={<PasswordReset setIsSignUpOrLogin={setIsSignUpOrLogin} />} />
               <Route path="/recovery-link" element={<RecoveryLink setIsSignUpOrLogin={setIsSignUpOrLogin} />} />
               <Route path="/update-password" element={<UpdatePassword setIsSignUpOrLogin={setIsSignUpOrLogin} />} />
-              <Route path="/receptionist" element={<Receptionist setIsSignUpOrLogin={setIsSignUpOrLogin} setEntity={setEntity} entity={entity}/>} />
+              <Route path="/receptionist" element={<Receptionist setIsSignUpOrLogin={setIsSignUpOrLogin} setEntity={setEntity} entity={entity} />} />
             </Routes>
           </Router>
         </div>
