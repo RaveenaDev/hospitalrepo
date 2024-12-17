@@ -8,15 +8,20 @@ import Logo from './components/Logo';
 import Receptionist from './pages/receptionist'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+
 function App() {
   const [isSignUpOrLogin, setIsSignUpOrLogin] = useState(true);
   const [entity, setEntity] = useState("");
   return (
+
     <>
       <div className={`${isSignUpOrLogin ? "" : styles.crmApp}`}>
         <div className={styles.logo}>
           <Logo />
         </div>
+
+
         {/* if login or register page is actiive, add this class ${styles.loginPageActive} */}
         <div className={`${styles.register} ${isSignUpOrLogin ? styles.loginPageActive : styles.otherPages}`}>
           <Router basename='/hospitalrepo'>
